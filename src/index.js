@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from 'pages/app';
 import Views from 'pages/views';
 import * as serviceWorker from './serviceWorker';
 

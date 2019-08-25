@@ -1,21 +1,22 @@
-import React from 'react'
-const classPrefix = 'Views'
+import React from "react";
+import PostList from "./componts/props/PostList.js";
+const classPrefix = "Views";
 
 export default class Views extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.state = {
-    }
+    this.state = {};
   }
 
-  componentDidMount() {
-
-  }
+  componentDidMount() {}
 
   render() {
-    return <div className={`${classPrefix}`}>
-        练习开始
-    </div>
+    return (
+      <div className={`${classPrefix}`}>
+        props练习
+        <PostList />
+      </div>
+    );
   }
 }
