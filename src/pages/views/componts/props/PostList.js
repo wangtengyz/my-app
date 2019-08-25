@@ -65,7 +65,7 @@ export default class PostList extends Component {
         帖子列表
         <ul>
           {this.state.posts.map((item, index) => (
-            <PostItem key={index} post={item} onVote={this.handleVote} />
+            <PostItem key={index} post={item} />
           ))}
         </ul>
       </div>
