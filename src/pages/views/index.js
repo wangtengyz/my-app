@@ -1,5 +1,7 @@
 import React from "react";
-import PostList from "./componts/props/PostList.js";
+// import PostList from "./componts/props/PostList.js";
+import CssModules from "./componts/CssModules";
+import './index.less'
 const classPrefix = "Views";
 
 export default class Views extends React.Component {
@@ -9,13 +11,14 @@ export default class Views extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   render() {
     return (
       <div className={`${classPrefix}`}>
         props练习
-        <PostList />
+        {/* <PostList /> */}
+        <CssModules />
       </div>
     );
   }

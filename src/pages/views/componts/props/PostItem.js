@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import styles from './PostItem.module.css';
 import PropTypes from "prop-types";
 export default class PostItem extends Component {
   static propTypes = {
@@ -47,7 +48,7 @@ export default class PostItem extends Component {
   static defaultProps = {
     // 设定默认值后 其实isRequired 作用不大
     post: {},
-    handleVote: () => {}
+    handleVote: () => { }
   };
 
   handleVote = () => {
@@ -70,7 +71,7 @@ export default class PostItem extends Component {
           创建时间：<span>{date}</span>
         </div>
         <div>
-          <button onClick={handleVote}>点赞</button>
+          <button onClick={handleVote} className={styles.error}>点赞</button>
           &nbsp;
           <span>{vote}</span>
         </div>

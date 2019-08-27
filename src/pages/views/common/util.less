@@ -1,0 +1,370 @@
+@import "./ani.less";
+@main-color-music: #dea6ad;
+@main-color-dance: #fbe2df;
+html,
+body {
+  background: #fff;
+  min-height: 100vh;
+}
+
+main {
+  overflow: hidden;
+}
+b {
+  font-weight: bold;
+}
+
+em {
+  display: block;
+}
+
+a,
+img,
+button {
+  display: block;
+  user-select: none;
+  border: none;
+}
+
+.tb {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.auto {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nowrap {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.justify {
+  text-align: justify;
+  word-break: break-all;
+}
+
+.display-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.center-cen {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.center-mid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.br-50 {
+  border-radius: 50%;
+}
+
+.br-100 {
+  border-radius: 100px; /*no*/
+}
+
+.tr-50 {
+  transform: translate(-50%, -50%);
+}
+
+.font(@size, @height, @color: @main-color, @weight: normal, @align: center) {
+  font-size: @size;
+  line-height: @height;
+  color: @color;
+  font-weight: @weight;
+  text-align: @align;
+}
+
+.ipt-placeholder(@color: #00d8c9) {
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+  &::-moz-placeholder {
+    color: @color;
+  }
+  &:-moz-placeholder {
+    color: @color;
+  }
+}
+
+/*.lastbtn {
+  width: 97px;
+  height: 93px;
+  position: fixed;
+  right: 10px;
+  top: 490px;
+  .background('last.png');
+  z-index: 50;
+  animation: tada 2s ease-in-out alternate infinite;
+}*/
+
+.rocket-home-desc {
+  .font(23px, 1.3, rgb(238, 208, 170));
+  white-space: nowrap;
+}
+
+@keyframes teetertotter {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes flash {
+  from,
+  50%,
+  to {
+    // opacity: 1;
+    filter: brightness(180%);
+  }
+
+  25%,
+  75% {
+    filter: none;
+    // opacity: 0.6;
+  }
+}
+
+@keyframes tada {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  5%,
+  10% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+  15%,
+  25%,
+  35%,
+  45% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  20%,
+  30%,
+  40% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  50%,
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.text-shadow(@px, @color) {
+  text-shadow: 0 0 @px @color, 0 0 @px @color, 0 0 @px @color, 0 0 @px @color,
+    0 0 @px @color, 0 0 @px @color, 0 0 @px @color, 0 0 @px @color,
+    0 0 @px @color, 0 0 @px @color, 0 0 @px @color, 0 0 @px @color,
+    0 0 @px @color, 0 0 @px @color, 0 0 @px @color, 0 0 @px @color,
+    0 0 @px @color, 0 0 @px @color, 0 0 @px @color, 0 0 @px @color,
+    0 0 @px @color, 0 0 @px @color, 0 0 @px @color, 0 0 @px @color,
+    0 0 @px @color; // 重叠在一起有点像设计图的效果
+}
+
+.gradient(@start, @from, @to) {
+  background: -webkit-linear-gradient(@start, @from, @to);
+  background: -moz-linear-gradient(@start, @from, @to);
+  background: -o-linear-gradient(@start, @from, @to);
+  background: linear-gradient(@start, @from, @to);
+}
+
+.gradient-3(@start, @a, @b, @c) {
+  background: -webkit-linear-gradient(@start, @a, @b, @c);
+  background: -moz-linear-gradient(@start, @a, @b, @c);
+  background: -o-linear-gradient(@start, @a, @b, @c);
+  background: linear-gradient(@start, @a, @b, @c);
+}
+
+.gradient-4(@start, @a, @b, @c, @d) {
+  background: -webkit-linear-gradient(@start, @a, @b, @c, @d);
+  background: -moz-linear-gradient(@start, @a, @b, @c, @d);
+  background: -o-linear-gradient(@start, @a, @b, @c, @d);
+  background: linear-gradient(@start, @a, @b, @c, @d);
+}
+
+.background(@img, @height: 100%, @color: transparent, @repeat: no-repeat) {
+  background: url("~imgs-b/201906/rocket/@{img}") @repeat;
+  background-size: 100% @height;
+  background-color: @color;
+}
+
+@main-color: rgb(155, 77, 32);
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1.2, 1.2);
+  }
+
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+
+  to {
+    transform: scale(1.2, 1.2);
+  }
+}
+.pulse {
+  animation: pulse 2s infinite ease;
+}
+
+@keyframes bounce {
+  0%,
+  14%,
+  37%,
+  56%,
+  70% {
+    animation-timing-function: cubic-bezier(0.22, 0.6, 0.4, 1);
+    transform: translate3d(0, 0, 0);
+  }
+  28%,
+  30% {
+    animation-timing-function: cubic-bezier(0.8, 0.05, 0.8, 0.06);
+    transform: translate3d(0, -14px, 0);
+  }
+  49% {
+    animation-timing-function: cubic-bezier(0.8, 0.05, 0.8, 0.06);
+    transform: translate3d(0, -10px, 0);
+  }
+  63% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+.box-fixed {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.flex.grow > * {
+  flex: 1 0 0;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.full {
+  width: 100%;
+  height: 100%;
+}
+.width-full {
+  width: 100%;
+}
+.height-full {
+  height: 100%;
+}
+.fill {
+  flex: 1;
+}
+.item-fixed {
+  flex: 0 0 auto;
+}
+.item-center {
+  justify-content: center;
+  align-items: center;
+}
+.items-center {
+  justify-content: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.space-around {
+  justify-content: space-around;
+}
+.items-bottom {
+  align-items: flex-end;
+  align-items: baseline;
+}
+.items-start {
+  justify-content: flex-start;
+}
+.items-end {
+  justify-content: flex-end;
+}
+.items-middle {
+  align-items: center;
+}
+.items-stretch {
+  justify-items: stretch;
+}
+.salign-middle {
+  vertical-align: middle;
+}
+.margin-top-xl {
+  margin-top: 30px;
+}
+.margin-top {
+  margin-top: 25px;
+}
+.margin-top-sm {
+  margin-top: 15px;
+}
+.margin-left-sm {
+  margin-left: 10px;
+}
+.big {
+  font-size: 40px;
+}
+.lg {
+  font-size: 33px;
+}
+.h1 {
+  font-size: 30px;
+}
+.h2 {
+  font-size: 24px;
+}
+.h3 {
+  font-size: 20px;
+}
+.bold {
+  font-weight: bold;
+}
+.text-pink {
+  color: main-color-music;
+}

@@ -50,6 +50,7 @@ export default class PostList extends Component {
 
   handleVote = id => {
     // 根据帖子id进行过滤，找到待修改的vote属性的帖子，返回新的posts对象
+    console.log(id)
     const posts = this.state.posts.map(item => {
       const newItem = item.id === id ? { ...item, vote: ++item.vote } : item;
       return newItem;
@@ -65,7 +66,7 @@ export default class PostList extends Component {
         帖子列表
         <ul>
           {this.state.posts.map((item, index) => (
-            <PostItem key={index} post={item} />
+            <PostItem key={index} post={item} handleVote={this.handleVote} />
           ))}
         </ul>
       </div>
