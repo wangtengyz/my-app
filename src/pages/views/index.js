@@ -1,6 +1,5 @@
 import React from "react";
-// import PostList from "./componts/props/PostList.js";
-import G6 from "./componts/G6";
+import Lifecycle from "./componts/Lifecycle";
 import './index.less'
 const classPrefix = "Views";
 
@@ -16,8 +15,7 @@ export default class Views extends React.Component {
   render() {
     return (
       <div className={`${classPrefix}`}>
-        {/* <PostList /> */}
-        <G6 />
+        <Lifecycle />
       </div>
     );
   }
