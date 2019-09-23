@@ -1,5 +1,5 @@
 import React from "react";
-import Lifecycle from "./componts/Lifecycle";
+import ReduxLearning from "./componts/ReduxLearning/index";
 import './index.less'
 const classPrefix = "Views";
 
@@ -15,7 +15,7 @@ export default class Views extends React.Component {
   render() {
     return (
       <div className={`${classPrefix}`}>
-        <Lifecycle />
+        <ReduxLearning />
       </div>
     );
   }
