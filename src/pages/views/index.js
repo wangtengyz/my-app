@@ -1,5 +1,5 @@
 import React from "react";
-import ReduxLearning from "./componts/ReduxLearning/index";
+import ReduxLearning from "./componts/ReduxFirst/index";
 import './index.less'
 const classPrefix = "Views";
 
