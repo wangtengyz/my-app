@@ -1,6 +1,8 @@
 import React from "react";
-import ReduxLearning from "./componts/ReduxFirst/index";
-import './index.less'
+import ReduxFirst from "./componts/ReduxFirst/index";
+import CombineReducers from "./componts/CombineReducers/index";
+import ReactRedux from "./componts/ReactRedux/index";
+import "./index.less";
 const classPrefix = "Views";
 
 export default class Views extends React.Component {
@@ -10,12 +12,14 @@ export default class Views extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() { }
+  componentDidMount() {}
 
   render() {
     return (
       <div className={`${classPrefix}`}>
-        <ReduxLearning />
+        {/* <ReduxFirst /> */}
+        <CombineReducers />
+          {/* <ReactRedux /> */}
       </div>
     );
   }
