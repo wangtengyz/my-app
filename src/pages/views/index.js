@@ -1,7 +1,5 @@
 import React from "react";
-import ReduxFirst from "./componts/ReduxFirst/index";
-import CombineReducers from "./componts/CombineReducers/index";
-import ReactRedux from "./componts/ReactRedux/index";
+import CssSolution from "./componts/CssSolution";
 import "./index.less";
 const classPrefix = "Views";
 
@@ -17,9 +15,7 @@ export default class Views extends React.Component {
   render() {
     return (
       <div className={`${classPrefix}`}>
-        {/* <ReduxFirst /> */}
-        <CombineReducers />
-          {/* <ReactRedux /> */}
+        <CssSolution />
       </div>
     );
   }

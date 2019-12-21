@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+// 全局引入通用样式
+import './assets/base/index.less'
 import Views from 'pages/views';
 import * as serviceWorker from './serviceWorker';
 

@@ -1,55 +1,55 @@
-import { combineReducers } from 'redux'
+// import { combineReducers } from 'redux'
 import {CHANGE_INPUT,ADD_ITEM,DELETE_ITEM} from './action'
 const defaultState = {
   inputValue: "Write Something",
   list: ["早上6点跑步"]
 };
 
-// export default function reducer (state = defaultState, action){
-//   const { type,payload } = action;
-//   // reducer只能接受state，不能改变state
-//   switch (type) {
-//     case CHANGE_INPUT:
-//       return Object.assign({}, state, {
-//         inputValue:payload
-//       })
-//     case ADD_ITEM:
-//     case DELETE_ITEM:
-//       return  Object.assign({}, state, {
-//         list:[...payload]
-//       })   
-//     default:
-//       return state;
-//   }
-// };
-// 处理inputValue改变的reducer
-function inputValue (state='Write Something',action){
+export default function reducer (state = defaultState, action){
   const { type,payload } = action;
-   switch (type) {
-     case CHANGE_INPUT:
-       return payload
-     default:
-       return state;
-   }
-}
-// 处理列表list改变的reducer
-function list (state=["早上6点跑步"],action){
-  const { type,payload } = action;
-   switch (type) {
-     case ADD_ITEM:
-     case DELETE_ITEM:
-       return [...payload]
-     default:
-       return state;
-   }
-}
-
-export default function reducer (state = defaultState, action) {
-  return {
-    inputValue: inputValue(state.inputValue, action),
-    list:list(state.list, action)
-    }
+  // reducer只能接受state，不能改变state
+  switch (type) {
+    case CHANGE_INPUT:
+      return Object.assign({}, state, {
+        inputValue:payload
+      })
+    case ADD_ITEM:
+    case DELETE_ITEM:
+      return  Object.assign({}, state, {
+        list:[...payload]
+      })   
+    default:
+      return state;
   }
+};
+// 处理inputValue改变的reducer
+// function inputValue (state='Write Something',action){
+//   const { type,payload } = action;
+//    switch (type) {
+//      case CHANGE_INPUT:
+//        return payload
+//      default:
+//        return state;
+//    }
+// }
+// 处理列表list改变的reducer
+// function list (state=["早上6点跑步"],action){
+//   const { type,payload } = action;
+//    switch (type) {
+//      case ADD_ITEM:
+//      case DELETE_ITEM:
+//        return [...payload]
+//      default:
+//        return state;
+//    }
+// }
+
+// export default function reducer (state = defaultState, action) {
+//   return {
+//     inputValue: inputValue(state.inputValue, action),
+//     list:list(state.list, action)
+//     }
+//   }
 
 // 注意，每个拆分的reducer只接收它负责的state中的部分属性，而不
 // 再是完整的state对象。todos接收state.todos，visibilityFilter接收
